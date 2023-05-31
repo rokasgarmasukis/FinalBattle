@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal interface ICharacter
+internal interface IAction
 {
-    string Name { get; }
-
-    void Execute(IAction action);
+    void Run(string name);
 }

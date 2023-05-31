@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal interface ICharacter
+internal class Party
 {
-    string Name { get; }
-
-    void Execute(IAction action);
+    public string Name { get; } = string.Empty;
+    public List<ICharacter> Characters { get; } = new List<ICharacter>();
 }

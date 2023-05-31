@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal interface ICharacter
+internal class Game
 {
-    string Name { get; }
+    public List<Party> PartyList = new List<Party>();
+    public Game()
+    {
 
-    void Execute(IAction action);
+    }
 }
