@@ -9,5 +9,10 @@ namespace FinalBattle;
 internal class Skeleton : ICharacter
 {
     public string Name { get; } = "SKELETON";
+    public IAttack Attack { get; } = new BoneCrunch();
+}
 
+internal class BoneCrunch : IAttack
+{
+    public string Name { get; } = "bone crunch";
 }

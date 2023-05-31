@@ -6,6 +6,18 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal class ComputerPlayer : Player
+internal class ComputerPlayer : IPlayer
 {
+
+    public Party Party { get; }
+
+    public ComputerPlayer(Party p)
+    {
+        Party = p;
+    }
+
+    public IAction ChooseAction()
+    {
+        return new AttackAction();
+    }
 }

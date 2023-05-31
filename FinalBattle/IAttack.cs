@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal interface ICharacter
+internal interface IAttack
 {
     string Name { get; }
-    IAttack Attack { get; }
-
 }
