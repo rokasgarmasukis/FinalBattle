@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal class Skeleton : ICharacter
+internal class ComputerPlayer : Player
 {
-    public string Name { get; } = "SKELETON";
-
 }

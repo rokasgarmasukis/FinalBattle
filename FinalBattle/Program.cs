@@ -3,10 +3,14 @@
 Console.Title = "Final Battle";
 
 Party heroes = new ();
-heroes.Characters.Add(new Skeleton());
+Console.WriteLine("What is your name, my hero?");
+string name = Console.ReadLine();
+heroes.Characters.Add(new TrueProgrammer() { Name = name ?? "True Programmer"});
+HumanPlayer humanPlayer = new HumanPlayer() { Party = heroes };
 
 Party monsters = new();
 monsters.Characters.Add(new Skeleton());
+ComputerPlayer computerPlayer = new ComputerPlayer() { Party = monsters };
 
 
 while(true)
@@ -14,17 +18,15 @@ while(true)
     foreach(var hero in heroes.Characters)
     {
         Console.WriteLine($"It is {hero.Name}'s turn...");
-        hero.Execute(new DoNothingAction());
+        IAction action = humanPlayer.ChooseAction();
+        action.Run(hero);
     }
-    Console.WriteLine("...");
-    Thread.Sleep(1000);
     foreach (var monster in monsters.Characters)
     {
         Console.WriteLine($"It is {monster.Name}'s turn...");
-        monster.Execute(new DoNothingAction());
+        IAction action = computerPlayer.ChooseAction();
+        action.Run(monster);
     }
-    Console.WriteLine("...");
-    Thread.Sleep(1000);
 
 }
 

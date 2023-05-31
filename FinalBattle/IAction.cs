@@ -8,5 +8,5 @@ namespace FinalBattle;
 
 internal interface IAction
 {
-    void Run(string name);
+    void Run(ICharacter character);
 }

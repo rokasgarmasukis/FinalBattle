@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal class Skeleton : ICharacter
+internal interface IPlayer
 {
-    public string Name { get; } = "SKELETON";
+    Party Party { get; }
+    IAction ChooseAction();
 
 }

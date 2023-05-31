@@ -8,9 +8,11 @@ namespace FinalBattle
 {
     internal class DoNothingAction : IAction
     {
-        public void Run(string name)
+        public void Run(ICharacter character)
         {
-            Console.WriteLine($"{name} did NOTHING.");
+            Thread.Sleep(1000);
+            Console.WriteLine($"{character.Name} did NOTHING");
+            Console.WriteLine(".....");
         }
     }
 }

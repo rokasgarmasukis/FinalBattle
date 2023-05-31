@@ -10,5 +10,4 @@ internal interface ICharacter
 {
     string Name { get; }
 
-    void Execute(IAction action);
 }

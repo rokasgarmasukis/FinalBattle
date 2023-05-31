@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinalBattle;
 
-internal class Skeleton : ICharacter
+internal class TrueProgrammer : ICharacter
 {
-    public string Name { get; } = "SKELETON";
+    public string Name { get; init; } 
 
 }
