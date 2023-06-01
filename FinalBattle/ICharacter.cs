@@ -9,6 +9,8 @@ namespace FinalBattle;
 internal interface ICharacter
 {
     string Name { get; }
+    int HP { get; set; }
+    int HPMax { get; }
     IAttack Attack { get; }
 
 }

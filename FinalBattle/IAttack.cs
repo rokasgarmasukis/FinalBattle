@@ -9,4 +9,5 @@ namespace FinalBattle;
 internal interface IAttack
 {
     string Name { get; }
+    int Damage { get; }
 }
