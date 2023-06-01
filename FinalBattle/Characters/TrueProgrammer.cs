@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalBattle;
+namespace FinalBattle.Characters;
 
 internal class TrueProgrammer : ICharacter
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalBattle;
+namespace FinalBattle.Characters;
 
 internal class Skeleton : ICharacter
 {
@@ -19,10 +19,12 @@ internal class BoneCrunch : IAttack
 {
     public string Name { get; } = "bone crunch";
 
-    public int Damage { get
+    public int Damage
+    {
+        get
         {
-            Random rand = new Random();
-            return rand.Next(2);
+            Random random = new Random();
+            return random.Next(2);
         }
     }
 }

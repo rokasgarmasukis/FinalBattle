@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinalBattle.Actions;
 
 namespace FinalBattle;
 
 internal class Battle
 {
-    public Battle(HumanPlayer humanPlayer, ComputerPlayer computerPlayer)
+    public Battle(IPlayer humanPlayer, IPlayer computerPlayer)
     {
         HumanPlayer = humanPlayer;
         ComputerPlayer = computerPlayer;
     }
 
-    public HumanPlayer HumanPlayer { get; }
-    public ComputerPlayer ComputerPlayer { get; }
+    public IPlayer HumanPlayer { get; }
+    public IPlayer ComputerPlayer { get; }
 
     internal void Run()
     {
@@ -35,8 +36,8 @@ internal class Battle
         {
             Console.WriteLine($"It is {attacker.Name}'s turn...");
             IAction action = attackingPlayer.ChooseAction();
-            Thread.Sleep(1000);
             action.Run(attacker, defendingPlayer.Party);
+            Thread.Sleep(500);
             Console.WriteLine();
             defendingPlayer.Party.CheckAndRemoveDeadCharacters();
         }
@@ -56,7 +57,7 @@ internal class Battle
 
         if (winner == HumanPlayer)
         {
-            Console.WriteLine("Humans have won! The Uncoded One has been defeated!");
+            Console.WriteLine("Humans have won this battle!");
         }
         else
         {

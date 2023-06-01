@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinalBattle.Characters;
 
-namespace FinalBattle
+namespace FinalBattle.Actions
 {
     internal class DoNothingAction : IAction
     {
