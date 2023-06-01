@@ -12,26 +12,8 @@ Party monsters = new();
 monsters.Characters.Add(new Skeleton());
 ComputerPlayer computerPlayer = new ComputerPlayer(monsters);
 
+Battle battle = new Battle(humanPlayer, computerPlayer);
+battle.Run();
 
-while(true)
-{
-    foreach(var hero in heroes.Characters)
-    {
-        Console.WriteLine($"It is {hero.Name}'s turn...");
-        IAction action = humanPlayer.ChooseAction();
-        Thread.Sleep(1000);
-        action.Run(hero, monsters);
-        Console.WriteLine();
 
-    }
-    foreach (var monster in monsters.Characters)
-    {
-        Console.WriteLine($"It is {monster.Name}'s turn...");
-        IAction action = computerPlayer.ChooseAction();
-        Thread.Sleep(1000);
-        action.Run(monster, heroes);
-        Console.WriteLine();
-    }
-
-}
 

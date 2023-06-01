@@ -23,7 +23,7 @@ internal class HumanPlayer : IPlayer
             Console.WriteLine("Please choose an action:");
             Console.WriteLine("1 - Do nothing");
             Console.WriteLine("2 - Attack");
-            Console.Write("You choice: ");
+            Console.Write("Your choice: ");
             string? input = Console.ReadLine();
             bool goodChoice = int.TryParse(input, out choice);
             if (!goodChoice)
